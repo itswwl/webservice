@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+       xmlns:jaxws="http://cxf.apache.org/jaxws"  
+       xmlns:soap="http://cxf.apache.org/bindings/soap"  
+       xsi:schemaLocation="  
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd  
+http://cxf.apache.org/jaxws  
+http://cxf.apache.org/schemas/jaxws.xsd">  
+  
+  
+<!-- ;服务接口 -->  
+ <!-- address为服务发布二级地址 完整地址为 /项目发布名称/cfx拦截地址/address   (cfx拦截地址在web.xml中url-pattern标签中配置)  -->  
+         <!--服务实现类 -->  
+   <jaxws:server id="jaxwsService" serviceClass="com.lvdun.service.HelloWorld" address="/WebService" >  
+       <jaxws:serviceBean >  
+                <bean class="com.lvdun.serviceImpl.HelloWorldImpl" />  
+       </jaxws:serviceBean>  
+   </jaxws:server>  
+</beans>  
